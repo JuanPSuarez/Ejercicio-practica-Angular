@@ -1,0 +1,14 @@
+<button mat-raised-button color="primary" (click)="mostrarVista()">{{ mostrarLista ? 'Ocultar Lista' : 'Mostrar Lista'}}</button>
+
+<div class="wraper" *ngIf="mostrarLista">
+    <table>
+        <tr>
+            <td>NOMBRES</td>
+            <td>COSTOS</td>
+        </tr>
+        <tr *ngFor="let producto of productService.productos">
+            <td>{{producto.nombres}}</td>
+            <td>{{producto.costos}}</td>
+        </tr>
+    </table>
+</div>
